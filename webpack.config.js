@@ -4,7 +4,7 @@ const precss = require('precss');
 
 module.exports = {
   entry: {
-    app: ['./src/index.js']
+    app: [ './src/index.js' ]
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -19,12 +19,12 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loaders: ['react-hot', 'babel'],
+        loaders: [ 'react-hot', 'babel' ],
         include: path.join(__dirname, 'src')
       }
     ]
   },
   postcss: function () {
-    return [autoprefixer, precss];
+    return [ autoprefixer, precss ];
   }
 };

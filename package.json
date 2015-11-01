@@ -7,7 +7,8 @@
     "react-redux-todo": "validate-commit-msg.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "NODE_ENV=test mocha",
+    "test:watch": "npm run test -- --watch",
     "build": "webpack --progress --colors",
     "serve": "webpack-dev-server --hot --progress --colors --inline"
   },
@@ -23,21 +24,26 @@
   "homepage": "https://github.com/JoshConley/react-redux-todo",
   "dependencies": {
     "autoprefixer": "^6.0.3",
+    "babel-loader": "^5.3.2",
     "css-loader": "^0.21.0",
     "lodash": "^3.10.1",
     "postcss-loader": "^0.7.0",
     "precss": "^1.3.0",
     "react": "^0.14.1",
+    "react-dom": "^0.14.1",
     "react-redux": "^4.0.0",
     "redux": "^3.0.4",
+    "seamless-immutable": "^4.0.2",
     "style-loader": "^0.13.0"
   },
   "devDependencies": {
-    "babel-core": "^6.0.14",
+    "babel": "^5.8.23",
     "babel-eslint": "^4.1.3",
-    "babel-loader": "^6.0.0",
-    "babel-preset-es2015": "^6.0.14",
+    "chai": "^3.4.0",
+    "chai-immutable": "^1.5.0",
+    "eslint": "^1.8.0",
     "eslint-plugin-react": "^3.6.3",
+    "mocha": "^2.3.3",
     "react-hot-loader": "^1.3.0",
     "redux-devtools": "^2.1.5",
     "webpack": "^1.12.2",
