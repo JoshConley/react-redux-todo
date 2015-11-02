@@ -28,6 +28,7 @@ class TodoCreateInput extends Component {
       <div>
         <input
             autoFocus="true"
+            className="TodoCreateInput-input"
             onChange={this.doChange.bind(this)}
             onKeyDown={this.doSubmit.bind(this)}
             type="text"

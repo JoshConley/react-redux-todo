@@ -1,4 +1,5 @@
 import React , { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 
 class TodoItem extends Component {
   render () {
@@ -6,7 +7,11 @@ class TodoItem extends Component {
 
     return (
       <div>
-        <label>
+        <label className={classnames(
+          'TodoItem-checkbox', {
+            'checked': todo.completed
+          })}
+        >
           <input
               checked={todo.completed}
               onChange={() => { toggleComplete(todo.id); }}

@@ -38,3 +38,14 @@ table {
   border-spacing: 0;
   border-collapse: collapse;
 }
+
+input {
+  font: inherit;
+  outline: none;
+  border: none;
+  background: none;
+  color: inherit;
+  line-height: 1;
+  width: 100%;
+  box-sizing: border-box;
+}

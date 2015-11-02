@@ -12,7 +12,7 @@ class App extends Component {
     const { todos, actions } = this.props;
 
     return (
-      <div>
+      <div className="container">
         <TodoCreateInput addTodo={actions.addTodo} />
         <TodoList
             actions={actions}

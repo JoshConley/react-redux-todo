@@ -8,7 +8,7 @@ class TodoList extends Component {
     const { todos, actions } = this.props;
 
     return (
-      <section>
+      <section className="TodoList">
         {todos.map((todo) => {
           return (
             <TodoItem
