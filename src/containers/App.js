@@ -1,15 +1,32 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as TodoActions from '../actions/todos';
 
+// Components
+import TodoCreateInput from '../components/TodoCreateInput';
+import TodoList from '../components/TodoList';
+
 class App extends Component {
   render() {
+    const { todos, actions } = this.props;
+
     return (
-      <span>Stuff will go here</span>
+      <div>
+        <TodoCreateInput addTodo={actions.addTodo} />
+        <TodoList
+            actions={actions}
+            todos={todos}
+        />
+      </div>
     );
   }
 }
+
+App.propTypes = {
+  actions: PropTypes.object.isRequired,
+  todos: PropTypes.array.isRequired
+};
 
 function mapStateToProps(state) {
   return {

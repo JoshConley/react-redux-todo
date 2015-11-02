@@ -1,7 +1,6 @@
 import { expect } from 'chai';
 import todos from '../../src/reducers/todos';
 import * as act from '../../src/constants/ActionTypes';
-import Immutable from 'seamless-immutable';
 
 describe('To-Dos Reducer', () => {
   it('should return the inital state when previous state is empty', () => {
@@ -18,7 +17,7 @@ describe('To-Dos Reducer', () => {
 
   it('should add a to-do', () => {
     expect(
-      todos(Immutable([]), {
+      todos([], {
         type: act.ADD_TODO,
         text: 'Walk the dog'
       })
@@ -32,13 +31,13 @@ describe('To-Dos Reducer', () => {
 
     expect(
       todos(
-        Immutable([
+        [
           {
             id: 0,
             text: 'Walk the dog',
             completed: false
           }
-        ]), {
+        ], {
           type: act.ADD_TODO,
           text: 'Feed the cat'
         }
@@ -60,7 +59,7 @@ describe('To-Dos Reducer', () => {
   it('should edit a todo', () => {
     expect(
       todos(
-        Immutable([
+        [
           {
             id: 0,
             text: 'Walk the dog',
@@ -71,7 +70,7 @@ describe('To-Dos Reducer', () => {
             text: 'Feed the cat',
             completed: false
           }
-        ]), {
+        ], {
           type: act.EDIT_TODO,
           id: 1,
           text: 'Meet the cat'
@@ -94,7 +93,7 @@ describe('To-Dos Reducer', () => {
   it('should mark todo as complete', () => {
     expect(
       todos(
-        Immutable([
+        [
           {
             id: 0,
             text: 'Walk the dog',
@@ -105,7 +104,7 @@ describe('To-Dos Reducer', () => {
             text: 'Feed the cat',
             completed: false
           }
-        ]), {
+        ], {
           type: act.TOGGLE_COMPLETE,
           id: 1
         }
@@ -127,7 +126,7 @@ describe('To-Dos Reducer', () => {
   it('should clear a todo', () => {
     expect(
       todos(
-        Immutable([
+        [
           {
             id: 0,
             text: 'Walk the dog',
@@ -138,7 +137,7 @@ describe('To-Dos Reducer', () => {
             text: 'Feed the cat',
             completed: false
           }
-        ]), {
+        ], {
           type: act.CLEAR_TODO,
           id: 0
         }
@@ -155,7 +154,7 @@ describe('To-Dos Reducer', () => {
   it('should clear all completed todos', () => {
     expect(
       todos(
-        Immutable([
+        [
           {
             id: 0,
             text: 'Walk the dog',
@@ -171,7 +170,7 @@ describe('To-Dos Reducer', () => {
             text: 'Buy bread',
             completed: true
           }
-        ]), {
+        ], {
           type: act.CLEAR_COMPLETE
         }
       )
