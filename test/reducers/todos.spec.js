@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import todos from '../../src/reducers/todos';
 import * as act from '../../src/constants/ActionTypes';
 
-describe('To-Dos Reducer', () => {
+describe('Reducer: To-Dos', () => {
   it('should return the inital state when previous state is empty', () => {
     expect(
       todos(undefined, {})

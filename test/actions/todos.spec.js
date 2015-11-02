@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import * as actions from '../../src/actions/todos';
 import * as act from '../../src/constants/ActionTypes';
 
-describe('Todos Actions', () => {
+describe('Action: Todos', () => {
   it('should create ADD_TODO action', () => {
     expect(actions.addTodo('Walk the dog')).to.deep.equal({
       type: act.ADD_TODO,

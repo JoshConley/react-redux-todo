@@ -16,7 +16,7 @@ class TodoCreateInput extends Component {
   doSubmit(e) {
     const text = e.target.value.trim();
 
-    if (e.which === 13) {
+    if (e.which === 13 && text) {
       this.props.addTodo(text);
       this.setState({ text: '' });
       // e.preventDefault();
@@ -27,6 +27,7 @@ class TodoCreateInput extends Component {
     return (
       <div>
         <input
+            autoFocus="true"
             onChange={this.doChange.bind(this)}
             onKeyDown={this.doSubmit.bind(this)}
             type="text"
