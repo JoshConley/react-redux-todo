@@ -7,18 +7,20 @@ class TodoItem extends Component {
 
     return (
       <div>
-        <label className={classnames(
+        <div className={classnames(
           'TodoItem-checkbox', {
             'checked': todo.completed
           })}
         >
-          <input
-              checked={todo.completed}
-              onChange={() => { toggleComplete(todo.id); }}
-              type="checkbox"
-          />
+          <label>
+            <input
+                checked={todo.completed}
+                onChange={() => { toggleComplete(todo.id); }}
+                type="checkbox"
+            />
+          </label>
           <span>{todo.text}</span>
-        </label>
+        </div>
       </div>
     );
   }

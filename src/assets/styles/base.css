@@ -21,46 +21,7 @@ body {
   }
 }
 
-.TodoCreateInput-input {
-  border: 2px solid var(--mainColor);
-  border-radius: 4px;
-  padding: 0.4em 0.75em 0.5em 0.75em;
-}
-
-.TodoList {
-  padding: 1em 0;
-}
-
-.TodoItem-checkbox {
-  display: block;
-  padding: 0.25em 0;
-  cursor: pointer;
-
-  span:before {
-    box-sizing: border-box;
-    display: inline-block;
-    content: "";
-    width: 14px;
-    height: 14px;
-    border: 2px solid var(--mainColor);
-    border-radius: 4px;
-    position: relative;
-    top: 1px;
-    margin-right: 0.4em;
-  }
-
-  &.checked {
-    span:before {
-      box-shadow: inset 0 0 0 2px var(--backgroundColor),
-                  inset 0 0 0 6px var(--mainColor);
-    }
-
-    span {
-      text-decoration: line-through;
-    }
-  }
-
-  input[type="checkbox"] {
-    display: none;
-  }
-}
+/* Components */
+@import 'components/TodoCreateInput';
+@import 'components/TodoList';
+@import 'components/TodoItem';
